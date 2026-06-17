@@ -95,7 +95,7 @@ Response:
 GET /api/universes/:universeId/stocks/:ticker/outperformance
 ```
 
-Returns the outperformance series for a ticker within a known universe. Returns 404 when any inputs are not found.
+Returns the outperformance series for a ticker within a known universe.Returns 400 for validation errors and 404 when the universe or ticker cannot be resolved.
 
 Response:
 
@@ -119,7 +119,7 @@ POST /api/outperformance
 Content-Type: application/json
 ```
 
-Returns the outperformance series for a ticker within a known universe, defined by tickers. Returns 404 when any inputs are not found.
+Returns the outperformance series for a ticker within a known universe, defined by tickers. Returns 400 for validation errors and 404 when the universe or ticker cannot be resolved.
 
 Body:
 
