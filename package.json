@@ -1,0 +1,25 @@
+{
+    "name": "outperformance-tracker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "node --experimental-vm-modules node_modules/.bin/jest",
+        "format": "prettier . --write",
+        "format:check": "prettier . --check",
+        "start": "node src/server.js",
+        "inspect": "node --inspect src/server.js"
+    },
+    "keywords": [],
+    "author": "Brandon hocking",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "express": "^5.2.1"
+    },
+    "devDependencies": {
+        "jest": "^30.4.2",
+        "prettier": "^3.8.4",
+        "supertest": "^7.2.2"
+    }
+}
