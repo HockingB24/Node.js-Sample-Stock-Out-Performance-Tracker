@@ -97,6 +97,35 @@ describe('API integration Test', () => {
         expect(response.body.data[0]).toHaveProperty('outperformancePercentage')
     })
 
+    it('POST /api/outperformance treats universe tickers as a case-insensitive set', async () => {
+        const response = await request(app)
+            .post('/api/outperformance')
+            .send({
+                comparisonTicker: 'aapl',
+                universe: [
+                    'intc',
+                    'AMD',
+                    'NFLX',
+                    'META',
+                    'TSLA',
+                    'NVDA',
+                    'AMZN',
+                    'GOOG',
+                    'MSFT',
+                    'AAPL',
+                    'aapl',
+                ],
+            })
+
+        expect(response.status).toBe(200)
+        expect(response.body.universeId).toBe('1')
+        expect(response.body.ticker).toBe('AAPL')
+        expect(response.body.data).toHaveLength(365)
+        expect(response.body.data[0]).toHaveProperty('date')
+        expect(response.body.data[0]).toHaveProperty('outperformancePercentage')
+    })
+
+
     it('POST /api/outperformance returns 404 when universe ticker set does not match a known universe', async () => {
         const response = await request(app)
             .post('/api/outperformance')
