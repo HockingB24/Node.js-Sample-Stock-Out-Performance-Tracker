@@ -163,6 +163,8 @@ Notes:
 
 ## Example curl
 
+Basic:
+
 ```bash
 curl -X POST http://localhost:3000/api/outperformance \
   -H "Content-Type: application/json" \
@@ -170,4 +172,15 @@ curl -X POST http://localhost:3000/api/outperformance \
     "comparisonTicker": "AAPL",
     "universe": ["AAPL", "MSFT", "GOOG", "AMZN", "NVDA", "TSLA", "META", "NFLX", "AMD", "INTC"]
   }'
+```
+
+Including jq for formatting:
+
+```bash
+curl -X POST http://localhost:3000/api/outperformance \
+  -H "Content-Type: application/json" \
+  -d '{
+    "comparisonTicker": "AAPL",
+    "universe": ["AAPL", "MSFT", "GOOG", "AMZN", "NVDA", "TSLA", "META", "NFLX", "AMD", "INTC"]
+  }' | jq
 ```
