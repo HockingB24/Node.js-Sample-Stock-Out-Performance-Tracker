@@ -21,7 +21,6 @@ export const ALL_TICKERS = [
     'KO',
 ]
 
-export const ALL_UNIVERSE_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 export const UNIVERSE_ID_TO_TICKERS = new Map([
     ['1', ['AAPL', 'MSFT', 'GOOG', 'AMZN', 'NVDA', 'TSLA', 'META', 'NFLX', 'AMD', 'INTC']],
@@ -49,5 +48,7 @@ export const UNIVERSE_TICKERS_TO_ID = new Map(
         universeId,
     ]),
 )
+
+export const ALL_UNIVERSE_IDS = [...UNIVERSE_ID_TO_TICKERS.keys()]
 
 export const DEFAULT_VOLATILITY_PERCENT = 2
