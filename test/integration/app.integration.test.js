@@ -34,10 +34,10 @@ describe('API integration Test', () => {
     it('GET /api/universes/:universeId/stocks/:ticker/outperformance returns outperformance for a ticker in a universe', async () => {
         const response = await request(app).get('/api/universes/1/stocks/AAPL/outperformance')
         expect(response.status).toBe(200)
-        expect(response.body).toHaveLength(365)
-        expect(response.body[0]).toHaveProperty('date')
-        expect(response.body[0]).toHaveProperty('outperformancePercentage')
-        expect(typeof response.body[0].outperformancePercentage).toBe('number')
+        expect(response.body.data).toHaveLength(365)
+        expect(response.body.data[0]).toHaveProperty('date')
+        expect(response.body.data[0]).toHaveProperty('outperformancePercentage')
+        expect(typeof response.body.data[0].outperformancePercentage).toBe('number')
     })
 
     it('handles lowercase tickers', async () => {

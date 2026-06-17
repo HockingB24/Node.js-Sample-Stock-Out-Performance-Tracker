@@ -100,16 +100,16 @@ Returns the outperformance series for a ticker within a known universe. Returns 
 Response:
 
 ```json
-[
-    {
-        "date": "2025-06-17T05:00:00.000Z",
-        "outperformancePercentage": 75
-    },
-    {
-        "date": "2025-06-18T05:00:00.000Z",
-        "outperformancePercentage": 50
-    }
-]
+{
+    "universeId": "1",
+    "ticker": "AAPL",
+    "data": [
+        {
+            "date": "2025-06-17T05:00:00.000Z",
+            "outperformancePercentage": 75
+        }
+    ]
+}
 ```
 
 ### Outperformance by Universe Tickers

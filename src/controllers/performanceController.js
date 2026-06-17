@@ -57,7 +57,11 @@ export function getStockOutperformanceSeriesByUniverseId(req, res, next) {
         )
     }
 
-    res.status(200).json(result)
+    res.status(200).json({
+        universeId,
+        ticker: normalizedTicker, 
+        data: result
+    })
 }
 
 export function getStockDailyReturnSeries(req, res, next) {
